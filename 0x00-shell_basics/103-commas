@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -A | sort -t / -k 2 | awk '{if ($0 ~ /\/$/) { printf "%s\n", $0; } else { printf "%s,", $0; }}' | awk 'BEGIN {ORS=","}; {if (NF>1) printf "%s", $0; else printf "%s\n", $0}' | awk '{sub(/,$/,"\n");print}'
+ls -A | sort -t / -k 2 | tr '\n' ',' | sed 's/,$/\n/;s/\/,/\//'
