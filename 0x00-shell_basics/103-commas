@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -A | sort -t / -k 2 | tr '\n' ',' | sed 's/,$/\n/;s/\/,/\//'
+ls -A | sort -t / -k 2 | awk '{if ($0 ~ /
