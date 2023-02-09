@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -A | sort -t / -k 2 | awk '{if ($0 ~ /
+ls -amvp
